@@ -17,12 +17,11 @@ object DatabaseClient{
             val instance=Room.databaseBuilder(
                 context.applicationContext,
                 AppDataBase::class.java,
-                "my_database"
+                "user_database"
             ).build()
             INSTANCE=instance
             instance
         }
-
     }
 
 }

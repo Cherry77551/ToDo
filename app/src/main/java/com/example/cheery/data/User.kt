@@ -2,8 +2,7 @@ package com.example.cheery.data
 import androidx.room.*
 
 @Entity(
-    tableName = "user_table",
-    indices = [Index(value=["user_id"])]
+    tableName = "user_table"
 )
 data class User (
     @PrimaryKey(autoGenerate = true)

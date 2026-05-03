@@ -5,6 +5,39 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/main_background"
     tools:context=".activity.EditActivity">
+
+    <Button
+        android:layout_width="89dp"
+        android:layout_height="73dp"
+        android:background="@drawable/_back"
+        tools:layout_editor_absoluteX="-27dp"
+        tools:layout_editor_absoluteY="5dp" />
+
+    <EditText
+        android:id="@+id/etTitle"
+        android:background="@drawable/sp_et"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:maxLines="3"
+        android:textSize="30sp"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="79dp"
+        android:hint="输入待办标题吧~"
+        android:gravity="center"/>
+    <EditText
+        android:id="@+id/etDetail"
+        android:layout_width="match_parent"
+        android:layout_height="520dp"
+        android:background="@drawable/sp_et"
+        android:hint="可以记录一下具体待办哦"
+        android:textSize="20sp"
+        android:inputType="textImeMultiLine"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@+id/etTitle"
+        android:layout_marginTop="20dp"/>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

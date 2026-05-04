@@ -11,12 +11,13 @@ import com.example.cheery.data.Task
 import java.text.SimpleDateFormat
 import java.util.Date
 import android.graphics.Paint
+import android.widget.ImageView
 
 class TaskAdapter(val list: MutableList<Task>): RecyclerView.Adapter<TaskAdapter.ViewHolder>(){
     var onItemClick: ((Int) -> Unit)? = null
     var onCheckChange: ((Int) -> Unit)? = null
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TaskAdapter.ViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.id.rvTask, parent, false)
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.task, parent, false)
         return ViewHolder(view)
     }
 
@@ -42,8 +43,8 @@ class TaskAdapter(val list: MutableList<Task>): RecyclerView.Adapter<TaskAdapter
 
     inner class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val title = view.findViewById<TextView>(R.id.tvTitle)
-        val isCompleted: CheckBox = itemView.findViewById(R.id.cbComp)
-        val ivPin: TextView = itemView.findViewById(R.id.ivPin)
+        val isCompleted: CheckBox = view.findViewById(R.id.cbComp)
+        val ivPin: ImageView = view.findViewById(R.id.ivPin)
         val date = view.findViewById<TextView>(R.id.tvDate)
         init {
             view.setOnClickListener {

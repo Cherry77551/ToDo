@@ -11,6 +11,7 @@ import androidx.lifecycle.lifecycleScope
 import com.example.cheery.R
 import com.example.cheery.data.DatabaseClient
 import com.example.cheery.data.Task
+import com.example.cheery.data.TaskDao
 import com.example.cheery.repository.TaskRepository
 import com.example.cheery.viewmodel.TaskViewmodel
 import kotlinx.coroutines.launch
@@ -19,7 +20,7 @@ class EditActivity : AppCompatActivity() {
     private lateinit var etTitle: EditText
     private lateinit var etContent: EditText
     private lateinit var viewmodel: TaskViewmodel
-    val dao= DatabaseClient.getDatabase(this).taskDao()
+    private lateinit var dao: TaskDao
     private var taskId: Long = -1L
     private var oldTask: Task? = null
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -33,6 +34,7 @@ class EditActivity : AppCompatActivity() {
         }
         etTitle=findViewById<EditText>(R.id.etTitle)
         etContent=findViewById<EditText>(R.id.etDetail)
+        dao= DatabaseClient.getDatabase(this).taskDao()
         val repo= TaskRepository(dao)
         viewmodel= TaskViewmodel(repo)
         //接收从主页面任务点击传来的数据
@@ -43,30 +45,29 @@ class EditActivity : AppCompatActivity() {
         etContent.setText(detail)
         //返回
         findViewById<Button>(R.id.btnBack).setOnClickListener{
-            onDestroy()
+            save()
         }
+        //确认
+        findViewById<Button>(R.id.btnRight).setOnClickListener { save() }
     }
 
-    override fun onDestroy() {
-        super.onDestroy()
-        //退出时直接保存
-        save()
-    }
-
-    private fun save(){
-        val title=etTitle.text.toString().trim()
-        val detail=etContent.text.toString()
-        if(title.isEmpty()) return//没有标题就不保存
-        //如果任务是新建的
-        if(taskId==-1L){
-            viewmodel.add(title,detail)
+    private fun save() {
+        val title = etTitle.text.toString().trim()
+        val detail = etContent.text.toString()
+        if (title.isEmpty()) {
+            finish()
+            return
         }
-        //不是新建的话,要从Room里面读取
-        else{
-            lifecycleScope.launch{
-                oldTask=dao.getTaskById(taskId)
+        if (taskId == -1L) {
+            viewmodel.add(title, detail)
+            finish()
+        } else {
+            lifecycleScope.launch {
+                oldTask = dao.getTaskById(taskId)
                 oldTask?.let {
-                    viewmodel.update(Task(taskId,title,detail, isCompleted = it.isCompleted, isPinned = it.isPinned)) }
+                    viewmodel.update(Task(taskId, title, detail, isCompleted = it.isCompleted, isPinned = it.isPinned))
+                }
+                finish()
             }
         }
     }

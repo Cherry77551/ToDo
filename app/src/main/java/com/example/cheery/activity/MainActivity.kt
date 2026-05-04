@@ -103,6 +103,7 @@ class MainActivity : AppCompatActivity() {
             val dialog= AlertDialog.Builder(this).setView(dialogView).setCancelable(true).create()
             dialogView.findViewById<Button>(R.id.cancel).setOnClickListener{
                 dialog.dismiss()
+                adapter.notifyItemChanged(position)
             }
             dialogView.findViewById<Button>(R.id.delete).setOnClickListener {
                 viewmodel.deleteTask(tasks[position])

@@ -20,20 +20,12 @@
 改变完成状态：通过复选框点击判断已完成与代办修改文字样式
 
 ##### 功能展示
-
-![029c6d42b6e78ef4d08d18b18e9f3c30](C:\Users\34410\Documents\Tencent Files\3441024350\nt_qq\nt_data\Pic\2026-05\Ori\e2bb9c44ae5c802c8e9dfa89fd1846e8.gif)
-
-![e2bb9c44ae5c802c8e9dfa89fd1846e8](C:\Users\34410\Documents\Tencent Files\3441024350\nt_qq\nt_data\Pic\2026-05\Ori\e2bb9c44ae5c802c8e9dfa89fd1846e8.gif)
-
-
-
-![23446e5572b33f706ba491b87ad3b002](C:\Users\34410\Documents\Tencent Files\3441024350\nt_qq\nt_data\Pic\2026-05\Ori\23446e5572b33f706ba491b87ad3b002.gif)
-
-![84f7033acb82ade5037beb8a04e991d5](C:\Users\34410\Documents\Tencent Files\3441024350\nt_qq\nt_data\Pic\2026-05\Ori\84f7033acb82ade5037beb8a04e991d5.gif)
-
-![23f47bffd6f4381af58cbc420afd1bdc](C:\Users\34410\Documents\Tencent Files\3441024350\nt_qq\nt_data\Pic\2026-05\Ori\23f47bffd6f4381af58cbc420afd1bdc.gif)
-
-![abff17bbeb3cfa0bd52ef5e8b255dca7](C:\Users\34410\Documents\Tencent Files\3441024350\nt_qq\nt_data\Pic\2026-05\Ori\abff17bbeb3cfa0bd52ef5e8b255dca7.gif)
+<img width="216" height="480" alt="029c6d42b6e78ef4d08d18b18e9f3c30" src="https://github.com/user-attachments/assets/f9df6154-c8c2-4989-bd7f-660676a69552" />
+<img width="216" height="480" alt="e2bb9c44ae5c802c8e9dfa89fd1846e8" src="https://github.com/user-attachments/assets/d881e0d5-484b-4f69-8a62-37493df166e3" />
+<img width="216" height="480" alt="abff17bbeb3cfa0bd52ef5e8b255dca7" src="https://github.com/user-attachments/assets/b77a10f6-14f2-42f7-8c85-85c2379b05a7" />
+<img width="216" height="479" alt="23f47bffd6f4381af58cbc420afd1bdc" src="https://github.com/user-attachments/assets/d349bc27-0cea-43ad-b07c-e16c828d3091" />
+<img width="216" height="480" alt="84f7033acb82ade5037beb8a04e991d5" src="https://github.com/user-attachments/assets/c406264c-0bd1-42ca-b523-25231b67e0a7" />
+<img width="216" height="480" alt="23446e5572b33f706ba491b87ad3b002" src="https://github.com/user-attachments/assets/fe399b60-b910-458f-a4ae-9547891108a9" />
 
 ##### 技术亮点
 
@@ -43,7 +35,7 @@
 
 一开始感觉MVVM架构好像很难理解，跟着课件一点点实现Room数据库，实现repository，再到viewModel，最后到activity。
 
-好像有点理解了Room数据库，学会了ViewModel和LiveData进行数据与UI的分离，联系了RecyclerView的Adapter和ItemTouchHelper侧滑交互，也看了一点协程（lifecycleScope、viewModelScope）的基本用法。第一次使用了约束布局里面的分割线哈哈
+好像有点理解了Room数据库，ViewModel和LiveData进行数据与UI的分离，联系了RecyclerView的Adapter和ItemTouchHelper侧滑交互，也看了一点协程（lifecycleScope、viewModelScope）的基本用法。第一次使用了约束布局里面的分割线哈哈
 
 过程中也遇到了很多问题，Gradle版本不兼容、编辑任务后列表不刷新、suspend函数不能在主线程调用、侧滑取消后还消失等，但最终都一一解决了。因为不熟练写了四天感觉还是差点意思。
 

@@ -44,7 +44,9 @@ class LoginActivity : AppCompatActivity() {
             Toast.makeText(this, result, Toast.LENGTH_SHORT).show()
             if (result.contains("成功")) {
                 // 登录成功，跳转到主页
-                startActivity(Intent(this, MainActivity::class.java))
+                val intent=Intent(this, MainActivity::class.java)
+                intent.putExtra("username",binding.etName.text.toString())
+                startActivity(intent)
                 finish()
             }
         }

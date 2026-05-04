@@ -10,6 +10,7 @@
     tools:context=".activity.EditActivity">
 
     <Button
+        android:id="@+id/btnBack"
         android:layout_width="89dp"
         android:layout_height="73dp"
         android:background="@drawable/_back"

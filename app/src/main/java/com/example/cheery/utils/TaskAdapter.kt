@@ -12,8 +12,7 @@ import java.text.SimpleDateFormat
 import java.util.Date
 import android.graphics.Paint
 
-class TaskAdapter(val list: MutableList<Task>): RecyclerView.Adapter<TaskAdapter.ViewHolder>(),
-    ItemTouchHelperAdapter {
+class TaskAdapter(val list: MutableList<Task>): RecyclerView.Adapter<TaskAdapter.ViewHolder>(){
     var onItemClick: ((Int) -> Unit)? = null
     var onCheckChange: ((Int) -> Unit)? = null
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TaskAdapter.ViewHolder {
@@ -61,10 +60,4 @@ class TaskAdapter(val list: MutableList<Task>): RecyclerView.Adapter<TaskAdapter
             }
         }
     }
-    //删除
-    override fun onItemDismiss(position: Int) {
-        list.removeAt(position)
-        notifyItemRemoved(position)
-    }
-    fun getTaskAt(position: Int): Task = list[position]
 }

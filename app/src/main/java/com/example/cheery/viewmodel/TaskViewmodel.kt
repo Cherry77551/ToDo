@@ -33,6 +33,12 @@ class TaskViewmodel(private val taskRepository: TaskRepository): ViewModel() {
             _message.value = "添加成功"
         }
     }
+    //更新任务
+    fun update(task: Task){
+        viewModelScope.launch {
+            taskRepository.updateTask(task)
+        }
+    }
     // 删除任务
     fun deleteTask(task: Task) {
         viewModelScope.launch {

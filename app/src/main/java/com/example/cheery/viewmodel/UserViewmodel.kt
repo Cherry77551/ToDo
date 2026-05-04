@@ -4,6 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.example.cheery.data.User
 import com.example.cheery.repository.UserRepository
 import kotlinx.coroutines.launch
 
@@ -48,7 +49,7 @@ class UserViewmodel(private val repo: UserRepository) : ViewModel(){
         }
     }
     //注销
-    fun delete(username: String, password: String) {
+    fun delete(username: String) {
         viewModelScope.launch { repo.delete(username) }
     }
 }

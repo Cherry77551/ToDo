@@ -14,11 +14,11 @@ class TaskRepository(private val taskDao: TaskDao) {
     //删除
     suspend fun deleteTask(task: Task) = taskDao.deleteTask(task)
     //切换完成状态
-    suspend fun toggleComplete(taskId: Int, isCompleted: Boolean) {
+    suspend fun toggleComplete(taskId: Long, isCompleted: Boolean) {
         taskDao.toggleComplete(taskId, isCompleted)
     }
     //切换置顶状态
-    suspend fun togglePin(taskId: Int, isPinned: Boolean) {
+    suspend fun togglePin(taskId: Long, isPinned: Boolean) {
         taskDao.togglePin(taskId, isPinned)
     }
 }

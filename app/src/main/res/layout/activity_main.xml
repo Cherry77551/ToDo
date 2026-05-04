@@ -35,8 +35,8 @@
 
     <Button
         android:id="@+id/btnAdd"
-        android:layout_width="71dp"
-        android:layout_height="52dp"
+        android:layout_width="59dp"
+        android:layout_height="51dp"
         android:layout_marginRight="16dp"
         android:layout_marginBottom="8dp"
         android:background="@drawable/_add"
